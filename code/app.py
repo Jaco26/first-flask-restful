@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_restful import Resource, Api
 
 app = Flask(__name__)
@@ -30,8 +30,18 @@ class Item(Resource): # all resources will be classes which inherit from flask_r
     else:
       return { 'message': 'Item already exits'}, 403
 
+class Items(Resource):
+  def get(self):
+    return items, 200
+
 
 api.add_resource(Item, '/item/<string:name>') # make the Item resource accessible from the api at the route provided as the second argument
+api.add_resource(Items, '/items')
+
+
+@app.route('/')
+def index():
+  return render_template('index.html')
 
 app.run(port=5000, debug=True)
 

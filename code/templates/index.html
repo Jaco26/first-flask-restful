@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Get Your Items Here!</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="row text-center underline">
+      <div class="f1">
+        Hello
+      </div>
+      <div class="f1">
+        How are you
+        <button id="get-items">Get Items</button>
+        <button id="create-item">Create Item</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="../static/script.js"></script>
+  <script>
+  
+  const request = new RequestMaker()
+
+  const getItems = document.querySelector('#get-items');
+  const createItem = document.querySelector('#create-item');
+
+  getItems.onclick = function() {
+    request.get('/items')
+      .then(res => console.log('RESPONSE', res))
+      .catch(err => console.log('ERROR', err))
+  }
+
+  createItem.onclick = function() {
+    request.post('/item/Jacob')
+      .then(res => {
+        console.log(res);
+        
+      })
+      .catch(err => {
+        console.log(err);
+        
+      })
+
+  }
+
+
+  
+  </script>
+</body>
+</html>

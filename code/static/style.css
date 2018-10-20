@@ -1,0 +1,41 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  display: block;
+  margin: auto;
+  width: 80%;
+  background-color: #efefef; 
+  height: 100%;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+}
+
+.f1 {
+  flex: 1;
+  margin: 5px;
+  padding: 5px;
+}
+
+.f2 {
+  flex: 2;
+  margin: 5px;
+  padding: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
