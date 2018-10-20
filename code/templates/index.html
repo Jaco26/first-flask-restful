@@ -37,7 +37,7 @@
   }
 
   createItem.onclick = function() {
-    request.post('/item/Jacob')
+    request.post('/item/Jacob', {price: 400})
       .then(res => {
         console.log(res);
         

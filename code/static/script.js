@@ -21,7 +21,7 @@ class RequestMaker {
   }
 
   post(url, data) {
-    const body = data ? Object.keys(data).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&') : {};
+    const body = data ? JSON.stringify(data) : {};
     const req = new XMLHttpRequest();
     return new Promise((resolve, reject) => {
       req.open('POST', url, true);
